@@ -35,7 +35,7 @@ describe String do
     end
     
     it "should be case insensitive" do
-        expect("ABCD".anagram_check("acdb")).to eq (true)
+        expect("ABcD".anagram_check("aCdb")).to eq (true)
     end
     
     it "should not take white-space or punctuation into account" do
