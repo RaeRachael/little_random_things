@@ -8,18 +8,10 @@ people = [
   { "name" => "Will", "sport" => "cycling"}
 ]
 
-current_sport = "" 
-reorder = people.group_by { |h| h["sport"] }.values
+reorder = people.group_by { |people| people["sport"] }
 
-reorder.each { |x|
-    x.each { |k,v|
-    if current_sport != k["sport"] 
-        puts k["sport"]
-        current_sport = k["sport"]
-    end 
-    puts k["name"]
-    }
-}
+reorder.each { |sport,value| puts sport
+    value.each{ |hsh| puts hsh["name"] } }
 
 
     
