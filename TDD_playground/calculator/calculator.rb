@@ -2,14 +2,10 @@ class Calculator
     
     def operation(number1, operation, number2)
         case operation
-        when "+"
-            return number1.to_f + number2.to_f
-        when "-"
-            return number1.to_f - number2.to_f 
-        when "*"
-            return number1.to_f * number2.to_f
-        when "/"
-            return number1.to_f / number2.to_f           
+            when "+" then  number1.to_f + number2.to_f
+            when "-" then  number1.to_f - number2.to_f 
+            when "*" then  number1.to_f * number2.to_f
+            when "/" then  number1.to_f / number2.to_f           
         end
     end
     
@@ -22,9 +18,7 @@ class Calculator
                     next if op != "*" && op !="/"
                 end 
                 num_op[index - 1] = operation(num_op[index - 1], op, num_op[index + 1])
-                num_op.delete_at(index)
-                num_op.delete_at(index)
-                puts "#{num_op}"
+                num_op.slice!(index,2)
                 break
             end
         end
